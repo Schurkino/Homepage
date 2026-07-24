@@ -5,13 +5,22 @@ document.addEventListener("DOMContentLoaded", function() {
     let dialogCloseButton = dialogElement.querySelector(".close_button");
     let allImageBoxes = document.querySelectorAll(".image_box");
 
-    /* Registrierung der Klick-Events fuer jede einzelne Bild-Box */
+   /* Registrierung der Klick-Events fuer jede einzelne Bild-Box */
     allImageBoxes.forEach(function(imageBox) {
-        imageBox.addEventListener("click", openDialog);
+        imageBox.addEventListener("click", function(event) {
+            openDialog(event.currentTarget);
+        });
+
+        imageBox.addEventListener("keydown", function(event) {
+            if (event.key === "Enter" || event.key === " ") {
+                /* Verhindert das Standard-Scrollen bei der Leertaste */
+                event.preventDefault(); 
+                openDialog(event.currentTarget);
+            }
+        });
     });
 
-    function openDialog(event) {
-        const currentBox = event.currentTarget;
+    function openDialog(currentBox) {
         const img = currentBox.querySelector("figure img");
         const figcaption = currentBox.querySelector("figure figcaption");
         const cubeContainer = currentBox.querySelector(".cube_container");
