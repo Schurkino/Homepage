@@ -106,7 +106,8 @@ a:first-child {
 a.link:hover {
     text-decoration:  underline;
 }
-a.link:focus-visible {
+a.link:focus-visible,
+a.link_logo:focus-visible {
     outline: 4px dashed var(--color_red) !important;
     outline-offset: 2px !important;
     filter: hue-rotate(0);
@@ -187,6 +188,7 @@ ul.image_container {
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    cursor: pointer;
 }
 .image_box figure {
     height: 100%;
@@ -296,6 +298,7 @@ dialog img {
     overflow: hidden;
     font-size: 2rem;
     color: var(--color_white);
+    cursor: pointer;
     
     animation-name: color-fade;
     animation-duration: 1s;
@@ -303,6 +306,7 @@ dialog img {
     animation-iteration-count: infinite; /* Unendlich wiederholen */
     background-color: var(--color_blue); 
 }
+
 
 @keyframes color-fade {
     0% {
