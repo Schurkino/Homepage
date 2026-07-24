@@ -148,8 +148,10 @@ main {
     margin: 2rem 0 0 0;    
 }
 
+/*
 footer {}
 .footer_container {}
+*/
 
 .contact_icon_mobile {
     display: none;
@@ -181,7 +183,6 @@ ul.image_container {
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
-.image_box video,
 .image_box figure {
     height: 100%;
     width: 100%;
@@ -192,26 +193,10 @@ ul.image_container {
     justify-content: center;
     align-items: stretch;
 }
-.image_box video {
-    background-color: var(--color_black);
-}
 .image_box figcaption {
     display: none;
 }
-.image_box dialog figcaption {
-    display: block;
-}
-.image_box dialog figcaption {
-    position: absolute;
-    bottom: 0;
-    padding: 0 0.375rem;
-    font-size: 0.75rem;
-    max-width: 100vw;
-    text-align: center;
-    color: var(--color_black);
-    background-color: #FFFFFF90;
-}
-.image_box figure img {
+.image_box img {
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -219,43 +204,50 @@ ul.image_container {
     object-fit: cover;
     transition: transform 0.5s;
 }
-.image_box:hover figure img,
+.image_box:hover img,
 .image_box:hover .cube_container {
     transform: scale(1.25);
 }
-.image_box:hover dialog figure img,
-.image_box:hover dialog .cube_container {
+
+/*
+dialog figure img,
+dialog .cube_container {
     transform: scale(1);
 }
-.image_box dialog figure {
-
-}
-.image_box dialog figure img {
-    display: block;
-    max-height: 80vh;
-    max-width: 100vw;
-}
-
-.image_box dialog {
-    display: inline-block;
+/*
+.image_box dialog figure {}
+*/
+dialog {
     box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    max-height: 90vh;
+    width: fit-content;
+    max-width: 90vw;
+    /*
     width: fit-content;
     min-width: max-content;
     max-width: 1000px;
     height: fit-content;
     min-height: max-content;
     max-height: 100%;
-    margin: auto;
+    */
+    margin: 0;
     padding: 0;
     border: 0;
     background-color: transparent;
     box-shadow: 6px 6px 6px #00000050;
 }
-.image_box dialog::backdrop {
+dialog::backdrop {
     background-color: #FFFFFFEE;
 }
-
-.image_box dialog .close_button {
+dialog:not([open]) * {
+    display: none;
+}
+dialog .close_button {
     position: absolute;
     display: inline;
     right: 0;
@@ -266,8 +258,26 @@ ul.image_container {
     cursor: pointer;
     color: #000000;
     background-color: #FFFFFF90;
+    z-index: 10;
 }
-
+dialog figcaption {
+    display: block;
+}
+dialog figcaption {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0.375rem;
+    font-size: 0.75rem;
+    max-width: 100vw;
+    text-align: center;
+    color: var(--color_black);
+    background-color: #FFFFFF90;
+}
+dialog img {
+    display: block;
+    max-height: 80vh;
+    max-width: 100vw;
+}
 
 /*/////////////////////////////////////////////////////////////////////////////////// ja_fake_tile.js START */
 .js_fake_tile {
@@ -503,4 +513,3 @@ dialog .f6 {
 .display_inline_block {
     display: inline-block!important;
 }
-
