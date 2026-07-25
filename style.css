@@ -191,7 +191,9 @@ ul.image_container {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     cursor: pointer;
-    background-color: #00E436;
+}
+.image_box:nth-of-type(2n) {
+    background-color: var(--color_pink);
 }
 .image_box figure {
     height: 100%;
