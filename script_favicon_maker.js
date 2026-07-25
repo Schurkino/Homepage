@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     canvasElement.height = 32;
 
     /* 3. Definiert die Farbpalette */
-    const colorPalette = ["#29ADFF", "#FFEC27", "#00E436", "#FF004D"];
+    const colorPalette = ["#FFEC27", "#29ADFF", "#FFA300", "#00E436", "#FF004D", "#FF77A8"];
     let currentColorIndex = 0;
 
     /* 4. Funktion zur Aktualisierung der Favicon-Farbe */
