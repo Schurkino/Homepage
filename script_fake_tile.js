@@ -28,16 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 fakeCounter++ 
 
                 if (fakeCounter == 1) {
-                    fakeText.innerHTML = "Click" + "<br>" + "me" + "<br>" + "really" + "<br>" + "fast";
+                    fakeText.innerHTML = "Click" + "<br>" + "me" + "<br>" + "really" + "<br>" + "fast!";
                 }
                 else if (fakeCounter == 2) {
-                    fakeText.innerHTML = "Click" + "<br>" + "me" + "<br>" + "faster";
+                    fakeText.innerHTML = "Click" + "<br>" + "me" + "<br>" + "faster!";
                 }
                 else if (fakeCounter == 3) {
-                    fakeText.innerHTML = "Try" + "<br>" + "again" + "<br>" + "to" +  "<br>" + "click";
+                    fakeText.innerHTML = "Try" + "<br>" + "again" + "<br>" + "to" +  "<br>" + "click!";
                 }
                 else {
-                    fakeText.innerHTML = "Click" + "<br>" + "me";
+                    fakeText.innerHTML = "Click" + "<br>" + "me!";
                     fakeCounter = 0;
                 }
 
