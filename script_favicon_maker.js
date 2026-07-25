@@ -1,37 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Erstelle dynamisch das Link-Element für das Favicon
-    let favicon = document.createElement("link");
-    favicon.rel = "icon";
-    document.head.appendChild(favicon);
+    /* 1. Sucht das bereits im HTML definierte Favicon-Element */
+    let faviconElement = document.querySelector("link[rel='icon']");
 
-    // 2. Erstelle ein unsichtbares Canvas-Element zum Zeichnen der Farben
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    canvas.width = 32;
-    canvas.height = 32;
+    /* 2. Erstellt das unsichtbare Canvas-Element zum Zeichnen */
+    const canvasElement = document.createElement("canvas");
+    const canvasContext = canvasElement.getContext("2d");
+    canvasElement.width = 32;
+    canvasElement.height = 32;
 
-    // 3. Deine definierten Farben
-    const colors = ["#29ADFF", "#FFEC27", "#00E436", "#FF004D"];
-    let colorIndex = 0;
+    /* 3. Definiert die Farbpalette */
+    const colorPalette = ["#29ADFF", "#FFEC27", "#00E436", "#FF004D"];
+    let currentColorIndex = 0;
 
-    // 4. Funktion, die das Quadrat zeichnet und das Favicon aktualisiert
+    /* 4. Funktion zur Aktualisierung der Favicon-Farbe */
     function changeFaviconColor() {
-        if (context && favicon) {
-            // Quadrat mit der aktuellen Farbe füllen
-            context.fillStyle = colors[colorIndex];
-            context.fillRect(0, 0, 32, 32);
+        canvasContext.fillStyle = colorPalette[currentColorIndex];
+        canvasContext.fillRect(0, 0, 32, 32);
 
-            // Canvas in ein Daten-Format (Data-URL) umwandeln und dem Favicon zuweisen
-            favicon.href = canvas.toDataURL("image/png");
+        faviconElement.href = canvasElement.toDataURL("image/png");
 
-            // Zum nächsten Index wechseln (Endlosschleife)
-            colorIndex = colorIndex + 1;
-            if (colorIndex >= colors.length) {
-                colorIndex = 0;
-            }
+        currentColorIndex = currentColorIndex + 1;
+        if (currentColorIndex >= colorPalette.length) {
+            currentColorIndex = 0;
         }
     }
 
-    // 5. Intervall starten: Alle 500 Millisekunden (halbe Sekunde) die Farbe wechseln
+    /* 5. Startet den Intervall-Wechsel alle 500 Millisekunden */
     setInterval(changeFaviconColor, 500);
 });
