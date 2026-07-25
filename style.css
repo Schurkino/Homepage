@@ -45,7 +45,7 @@ body{
     border: 0;
 }
 :focus-visible {
-    outline: 4px dashed var(--color_red) !important;
+    outline: 4px dashed var(--color_green) !important;
     outline-offset: -10px !important;
     filter: invert();
 }
@@ -110,7 +110,7 @@ a.link:hover {
 }
 a.link:focus-visible,
 a.link_logo:focus-visible {
-    outline: 4px dashed var(--color_red) !important;
+    outline: 4px dashed var(--color_pink) !important;
     outline-offset: 2px !important;
     filter: hue-rotate(0);
 }
