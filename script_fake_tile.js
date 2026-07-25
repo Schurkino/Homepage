@@ -1,40 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
     const allTiles = document.querySelectorAll(".image_box");
     
-    allTiles.forEach(function (tile, indexA) { // indexA hinzugefügt, um den Index des aktuellen Elements zu speichern
-        tile.addEventListener("mousedown", function () {
-            // Element A (das gehoverte Element, das verschoben werden soll)
-            const fakeTile = this.querySelector(".js_fake_tile"); 
-            const currentPosition = fakeTile?.closest(".image_box"); // .closest wird auch funktionieren
+    function swapTiles(clickedTile) {
+        const currentPosition = clickedTile.querySelector(".js_fake_tile")?.closest(".image_box"); 
+        
+        if (currentPosition) { 
+            /* Erstelle ein Array aus allen Kacheln, außer der aktuell angeklickten */
+            const otherTiles = Array.from(allTiles).filter(function (tile) {
+                return tile !== currentPosition;
+            });
             
-            if (currentPosition) { 
-                let randomIndex;
-                let newPosition;
+            /* Wähle eine zufällige Kachel aus den verbleibenden Kacheln */
+            const randomIndex = Math.floor(Math.random() * otherTiles.length);
+            const newPosition = otherTiles[randomIndex];
+            
+            const parent = currentPosition.parentNode;
+            
+            if (parent) {
+                const afterB = newPosition.nextSibling;
+                parent.insertBefore(newPosition, currentPosition);
+                parent.insertBefore(currentPosition, afterB);
                 
-                // Schleife, die so lange läuft, bis ein ZIEL-Element (newPosition) 
-                // gefunden wurde, das NICHT das aktuelle gehoverte Element (currentPosition) ist.
-                // Da newPosition über den randomIndex ermittelt wird, muss der randomIndex
-                // vom Index des currentPosition-Elements verschieden sein (indexA).
-                do {
-                    randomIndex = Math.floor(Math.random() * allTiles.length);
-                    newPosition = allTiles[randomIndex];
-                } 
-                while (randomIndex === indexA);
-                
-                
-                const parent = currentPosition.parentNode;
-                
-                if (parent) {
-                    // 1. Speichere das Element, das direkt NACH Element B kommt
-                    const afterB = newPosition.nextSibling;
-                    
-                    // 2. Füge Element B vor Element A ein
-                    parent.insertBefore(newPosition, currentPosition);
-                    
-                    // 3. Füge Element A an die ursprüngliche Position von Element B ein
-                    parent.insertBefore(currentPosition, afterB);
-                }
+                /* Behalte den Fokus auf dem verschobenen Element */
+                clickedTile.focus();
+            }
+        }
+    }
 
+    allTiles.forEach(function (tile) {
+        tile.addEventListener("click", function () {
+            swapTiles(this);
+        });
+
+        tile.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                /* Verhindert das Scrollen der Seite bei der Leertaste */
+                event.preventDefault(); 
+                swapTiles(this);
             }
         });
     });
