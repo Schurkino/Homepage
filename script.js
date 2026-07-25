@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let dialogElement = document.querySelector("#dialogElement");
     let dialogImage = document.querySelector("#imgPlaceholder");
     let dialogFigcaption = document.querySelector("#figcaptionPlaceholder");
-    let dialogCloseButton = dialogElement.querySelector(".close_button");
+    let dialogCloseButton = dialogElement?.querySelector(".close_button");
     let allImageBoxes = document.querySelectorAll(".image_box");
 
    /* Registrierung der Klick-Events fuer jede einzelne Bild-Box */
-    allImageBoxes.forEach(function(imageBox) {
+    allImageBoxes?.forEach(function(imageBox) {
         imageBox.addEventListener("click", function(event) {
             openDialog(event.currentTarget);
         });
@@ -49,12 +49,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     /* Der Button loest nur noch das Schliessen aus */
-    dialogCloseButton.addEventListener("click", function() {
+    dialogCloseButton?.addEventListener("click", function() {
         dialogElement.close();
     });
 
     /* Dieses Event feuert IMMER, wenn der Dialog zugeht (Button oder Escape) */
-    dialogElement.addEventListener("close", function() {
+    dialogElement?.addEventListener("close", function() {
         /* Bild-Attribute leeren */
         dialogImage.src = "";
         dialogImage.alt = "";
