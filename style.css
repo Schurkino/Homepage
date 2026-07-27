@@ -305,6 +305,12 @@ dialog img {
     line-height: 2.5rem;
 }
 
+@media (max-width: 512px) {
+    .js_fake_tile {
+        font-size: 1.5rem;
+    }
+}
+
 @keyframes color-fade {
     0% {
         background-color: var(--color_red);
