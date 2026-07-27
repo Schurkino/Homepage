@@ -59,6 +59,12 @@ h1 {
     line-height: 1.5rem;
     color: var(--color_black);
 }
+@media (max-width: 512px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+}
+
 h2 {
     font-size: 1.25rem;
     text-decoration: none;
