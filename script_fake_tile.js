@@ -31,12 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     fakeText.innerHTML = "Clique" + "<br>" + "ici!";
                 }
                 else if (fakeCounter == 2) {
-                    fakeText.innerHTML = "Clicca" + "<br>" + "qui?";
+                    fakeText.innerHTML = "Clicca" + "<br>" + "qui!";
                 }
                 else if (fakeCounter == 3) {
-                    fakeText.innerHTML = "Clicca" + "<br>" + "qui?";
-                }
-                else if (fakeCounter == 4) {
                     fakeText.innerHTML = "Нажми" + "<br>" + "сюда!";
                 }
                 else {
