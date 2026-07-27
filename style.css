@@ -284,7 +284,7 @@ dialog img {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     
     animation-name: color-fade;
@@ -295,7 +295,7 @@ dialog img {
 }
 .js_fake_text {
     color: var(--color_white);
-    padding: 1.25rem;
+    padding: 0.75rem;
     width: 100%;
     height: 100%;
     display: flex;
@@ -303,16 +303,6 @@ dialog img {
     justify-content: center;
     align-items: flex-start;
     line-height: 2.5rem;
-}
-
-
-@media (max-width: 768px) {
-    .js_fake_tile {
-        font-size: 2rem;
-    }
-    .js_fake_text {
-        padding: 0.75rem;
-    }
 }
 
 @keyframes color-fade {
