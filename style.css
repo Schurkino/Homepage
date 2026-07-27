@@ -182,7 +182,7 @@ ul.image_container {
     gap: 0;
     /* Der Browser erzeugt so viele Spalten wie hinein passen, abhängig von der verfügbaren Breite. */
     /* Überzählige leere Spalten verschwinden automatisch (anders als bei auto-fill). */
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
     /* Die Spalte darf maximal 1240px breit werden. */
     /* Aber nie breiter als 100% des Containers, falls der Container kleiner ist. */
 }
@@ -308,7 +308,7 @@ dialog img {
 
 @media (max-width: 768px) {
     .js_fake_tile {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
     .js_fake_text {
         padding: 0.75rem;
