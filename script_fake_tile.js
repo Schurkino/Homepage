@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     fakeText.innerHTML = "Click" + "<br>" + "me" + "<br>" + "faster!";
                 }
                 else if (fakeCounter == 3) {
-                    fakeText.innerHTML = "Try" + "<br>" + "again" + "<br>" + "to" +  "<br>" + "click!";
+                    fakeText.innerHTML = "Try" + "<br>" + "to" + "<br>" + "click!" + "<br>" + "again";
                 }
                 else {
                     fakeText.innerHTML = "Click" + "<br>" + "me!";
