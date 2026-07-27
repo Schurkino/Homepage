@@ -273,8 +273,8 @@ dialog figcaption {
 }
 dialog img {
     display: block;
-    max-height: 80vh;
-    max-width: 100vw;
+    max-height: 90vh;
+    max-width: 90vw;
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////// ja_fake_tile.js START */
