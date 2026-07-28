@@ -8,9 +8,7 @@ function createSnowflake() {
         flake.classList.add("snowflake");
 
         flake.style.left = Math.random() * 100 + "%";
-        flake.style.width = "24px";
-        flake.style.height = "24px";
-        
+
         /* Math.random() erzeugt eine Kommazahl zwischen 0 und 1.
         Multipliziert mit 4 ergibt das einen Wert zwischen 0 und 4.
         Durch das Addieren von 8 liegt das Endergebnis der Flugdauer
@@ -43,9 +41,7 @@ function createSnowflake() {
         cloneFlake.classList.add("snowflake");
 
         cloneFlake.style.left = Math.random() * 100 + "%";
-        cloneFlake.style.width = "24px";
-        cloneFlake.style.height = "24px";
-        
+      
         /* Math.random() erzeugt eine Kommazahl zwischen 0 und 1.
         Multipliziert mit 4 ergibt das einen Wert zwischen 0 und 4.
         Durch das Addieren von 8 liegt das Endergebnis der Flugdauer
