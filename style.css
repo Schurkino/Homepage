@@ -366,10 +366,20 @@ dialog .js_snow {
 dialog .snowflake {
     width: 80px;
     height: 80px;  
+    animation: animation_snow_dialog linear infinite;
+
 }
 @keyframes animation_snow {
     from { 
-        top: -25px; 
+        top: -40px; 
+    }
+    to { 
+        top: 100%; 
+    }
+}
+@keyframes animation_snow_dialog {
+    from { 
+        top: -80px; 
     }
     to { 
         top: 100%; 
