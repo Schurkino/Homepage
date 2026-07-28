@@ -24,20 +24,28 @@ document.addEventListener("DOMContentLoaded", function() {
         const img = currentBox.querySelector("figure img");
         const figcaption = currentBox.querySelector("figure figcaption");
         const cubeContainer = currentBox.querySelector(".cube_container");
+        const jsSnow = currentBox.querySelector(".js_snow");
 
         /* Falls weder ein Bild noch ein Wuerfel existiert (z.B. Fake-Tile), brechen wir ab */
-        if (!img && !cubeContainer) {
+        if (!img && !cubeContainer && !jsSnow) {
             return;
         }
 
-        /* Fall 1: Die Box enthaelt einen 3D-Wuerfel */
+        /* Fall: Die Box enthaelt einen 3D-Wuerfel */
         if (cubeContainer) {
             let copiedCubeContainer = cubeContainer.cloneNode(true);
             copiedCubeContainer.id = "cubeContainerClone";
             dialogElement.appendChild(copiedCubeContainer);
         }
+     
+        /* Fall: Die Box enthaelt Schnee Animation */
+        if (jsSnow) {
+            let copiedJsSnow = jsSnow.cloneNode(true);
+            copiedJsSnow.id = "js_snow_clone";
+            dialogElement.appendChild(copiedJsSnow);
+        }
 
-        /* Fall 2: Die Box enthaelt ein normales Bild */
+        /* Fall: Die Box enthaelt ein normales Bild */
         if (img) {
             dialogImage.src = img.src;
             dialogImage.alt = img.alt;
@@ -60,9 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
         dialogImage.alt = "";
         enableScroll();
 
-        /* Geklonten Wuerfel suchen und restlos entfernen, falls vorhanden */
+        /* Geklontes Wuerfel-Div suchen und restlos entfernen, falls vorhanden */
         if (dialogElement.querySelector("#cubeContainerClone")) {
             dialogElement.querySelector("#cubeContainerClone").remove();
+        }
+        /* Geklontens Schnee-Div suchen und restlos entfernen, falls vorhanden */
+        if (dialogElement.querySelector("#js_snow_clone")) {
+            dialogElement.querySelector("#js_snow_clone").remove();
         }
     });
 
