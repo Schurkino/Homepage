@@ -338,7 +338,7 @@ dialog img {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: var(--color_black);
+    background-color: var(--color_yellow);
 }
 dialog .js_snow {
     max-width: 500px;
@@ -348,7 +348,7 @@ dialog .js_snow {
 }
 .snowflake {
     position: absolute;
-    background-color: var(--color_white);
+    background-color: var(--color_darkgreen);
     pointer-events: none;
     /*
     transform: translateZ(0);
