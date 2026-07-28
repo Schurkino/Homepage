@@ -15,7 +15,7 @@ function createSnowflake() {
         Multipliziert mit 4 ergibt das einen Wert zwischen 0 und 4.
         Durch das Addieren von 8 liegt das Endergebnis der Flugdauer
         am Ende variabel zwischen minimal 8 und maximal 12 Sekunden. */
-        const duration = Math.random() * 4 + 8; 
+        const duration = Math.random() * 4 + 6; 
 
         /* Die berechnete Zahl wird mit der CSS-Zeiteinheit 's' (Sekunden)
         verknüpft und direkt als Inline-Style für die CSS-Animation
@@ -50,7 +50,7 @@ function createSnowflake() {
         Multipliziert mit 4 ergibt das einen Wert zwischen 0 und 4.
         Durch das Addieren von 8 liegt das Endergebnis der Flugdauer
         am Ende variabel zwischen minimal 8 und maximal 12 Sekunden. */
-        const durationClone = Math.random() * 4 + 8;
+        const durationClone = Math.random() * 4 + 6;
         
         /* Die berechnete Zahl wird mit der CSS-Zeiteinheit 's' (Sekunden)
         verknüpft und direkt als Inline-Style für die CSS-Animation
