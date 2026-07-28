@@ -348,7 +348,14 @@ dialog .js_snow {
 }
 .snowflake {
     position: absolute;
-    background-color: var(--color_darkgreen);
+    background-image: url("images/leaf.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    mix-blend-mode:exclusion;
+    /* filter: hue-rotate(-200deg); */
+    /* background-color: var(--color_darkgreen); */
     pointer-events: none;
     /*
     transform: translateZ(0);
@@ -356,7 +363,10 @@ dialog .js_snow {
     */
     animation: animation_snow linear infinite;
 }
-
+dialog .snowflake {
+    width: 80px;
+    height: 80px;  
+}
 @keyframes animation_snow {
     from { 
         top: -25px; 
