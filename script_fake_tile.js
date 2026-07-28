@@ -36,6 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 else if (fakeCounter == 3) {
                     fakeText.innerHTML = "Нажми" + "<br>" + "сюда!";
                 }
+                else if (fakeCounter == 4) {
+                    fakeText.innerHTML = "ここを" + "<br>" + "クリック!";
+                }
+                else if (fakeCounter == 5) {
+                    fakeText.innerHTML = "点击" + "<br>" + "这里!";
+                }
                 else {
                     fakeText.innerHTML = "Click" + "<br>" + "me!";
                     fakeCounter = 0;
