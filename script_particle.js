@@ -74,4 +74,4 @@ function createParticle() {
 }
 
 /* Intervall vergrößert, damit die Flocken nacheinander starten */
-setInterval(createParticle, 50);
+setInterval(createParticle, 120);
