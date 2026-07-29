@@ -350,7 +350,7 @@ dialog img {
     bottom: 0;
     mix-blend-mode: color-burn;
     background-image: url("images/rain_umbrella.svg");
-    background-size: 100% 95%;
+    background-size: 100% 90%;
     background-position: 100% 200%;
     background-repeat: no-repeat;
 }
