@@ -378,7 +378,7 @@ dialog .particle {
 }
 @keyframes animation_snow {
     from { 
-        top: -40px; 
+        top: -50px; 
     }
     to { 
         top: 100%; 
@@ -386,7 +386,7 @@ dialog .particle {
 }
 @keyframes animation_snow_dialog {
     from { 
-        top: -80px; 
+        top: -100px; 
     }
     to { 
         top: 100%; 
