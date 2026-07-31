@@ -120,6 +120,13 @@ document.addEventListener("DOMContentLoaded", function() {
         disableScroll();
     }
 
+    /* Wenn das Dialog-Element offen ist, dann löst der Klick auf den Blackdrop-Schatten das Schließen aus. Backdrop = dialogElement */
+    document.addEventListener("click", function(event) {
+        if (event.target === dialogElement && dialogElement.hasAttribute("open")) {
+            dialogElement.close();
+        }
+    });
+
     /* Der Button loest nur noch das Schliessen aus */
     dialogCloseButton?.addEventListener("click", function() {
         dialogElement.close();
