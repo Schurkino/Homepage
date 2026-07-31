@@ -218,7 +218,8 @@ ul.image_container {
     transition: transform 0.5s;
 }
 .image_box:hover img,
-.image_box:hover .cube_container {
+.image_box:hover .cube_container,
+.image_box:hover .js_particle {
     transform: scale(1.25);
 }
 
@@ -342,6 +343,7 @@ dialog img {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.5s;
 }
 .js_particle .umbrella { 
     width: 100%;
