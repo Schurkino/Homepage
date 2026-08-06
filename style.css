@@ -74,6 +74,7 @@ h2 {
     color: var(--color_black);
     padding: 1.5rem 0 0.75rem 0;
 }
+
 h3 {
     font-size: 1rem;
     text-decoration: none;
@@ -84,6 +85,7 @@ h3 {
     color: var(--color_black);
     padding: 1.5rem 0 0.75rem 0;
 }
+
 p {
     font-size: 1rem;
     text-decoration: none;
@@ -94,6 +96,7 @@ p {
     color: var(--color_black);
     padding: 0 0 0.75rem 0;
 }
+
 small {
     padding: 0;
     margin: 0;
@@ -124,6 +127,7 @@ ul {
     margin: 0;
     padding: 0;
 }
+
 li {
     list-style: inside;
     margin: 0;
@@ -197,6 +201,7 @@ ul.image_container {
 .image_box:nth-of-type(2n) {
     background-color: var(--color_lightgrey);
 }
+
 .image_box figure {
     height: 100%;
     width: 100%;
@@ -207,9 +212,11 @@ ul.image_container {
     justify-content: center;
     align-items: stretch;
 }
+
 .image_box figcaption {
     display: none;
 }
+
 .image_box img {
     width: 100%;
     max-width: 100%;
