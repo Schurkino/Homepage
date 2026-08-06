@@ -51,6 +51,7 @@ body{
 }
 
 h1 {
+    font-family: "PressStart2P";
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 200;
@@ -58,6 +59,9 @@ h1 {
     margin: 0;
     line-height: 1.5rem;
     color: var(--color_black);
+}
+h1:hover {
+    color: var(--color_blue);
 }
 
 h2 {
@@ -157,14 +161,11 @@ main {
     margin: 2.5rem 0 0 0;    
 }
 
-/*
-footer {}
-.footer_container {}
-*/
-
-.contact_icon_mobile {
+.icon_contact_mobile,
+.icon_privacy_policy_mobile,
+.icon_legal_notice_mobile {
     display: none;
-}
+}   
 
 .contact_container_desktop {
     display: flex;
@@ -492,21 +493,36 @@ dialog .f6 {
 
 
 @media (max-width: 768px) {
-    .contact_icon_mobile {
+    .icon_contact_mobile,
+    .icon_privacy_policy_mobile,
+    .icon_legal_notice_mobile {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 24px;
         height: 24px;
+        background-size:contain;
+        background-repeat: no-repeat;
     }   
-    .contact_label_mobile {
+    .icon_contact_mobile {
+        background-image: url(images/icon_contact_mobile.png);
+    }  
+    .icon_privacy_policy_mobile {
+        background-image: url(images/icon_privacy_policy_mobile.png);
+    }  
+    .icon_legal_notice_mobile {
+        background-image: url(images/icon_legal_notice_mobile.png);
+    }   
+    .label_contact_mobile,
+    .label_privacy_policy_mobile,
+    .label_legal_notice_mobile {
         display: none;
     }
 }
 
 @media (max-width: 512px) {
     h1 {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
 
