@@ -201,7 +201,6 @@ ul.image_container {
 .image_box:nth-of-type(2n) {
     background-color: var(--color_lightgrey);
 }
-
 .image_box figure {
     height: 100%;
     width: 100%;
@@ -212,11 +211,9 @@ ul.image_container {
     justify-content: center;
     align-items: stretch;
 }
-
 .image_box figcaption {
     display: none;
 }
-
 .image_box img {
     width: 100%;
     max-width: 100%;
@@ -228,7 +225,7 @@ ul.image_container {
 .image_box:hover img,
 .image_box:hover .cube_container,
 .image_box:hover .js_particle {
-    transform: scale(1.5);
+    transform: scale(1.15);
 }
 
 dialog {
