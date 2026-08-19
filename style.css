@@ -1,3 +1,7 @@
+/* Strg + D = Gleiche Elemente markieren */
+/* Shift + Alt + ↓ = Dublizieren nach unten */
+/* Shift + Alt + ↑ = Dublizieren nach oben */
+/* Shift + Alt + A = Multiple, markierte Zeilen auskommentieren */
 :root {
     --color_black: #000000;
     --color_darkblue: #1D2B53;
@@ -369,17 +373,16 @@ dialog .js_particle {
 }
 .particle {
     position: absolute;
-    background-image: url("images/rain.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 50px;
-    height: 50px;
+    display: block;
+    width: 4px;
+    height: 12px;
+    background-color: var(--color_blue);
     pointer-events: none;
     animation: animation_snow linear infinite;
 }
 dialog .particle {
-    width: 100px;
-    height: 100px;  
+    width: 8px;
+    height: 24px;
     animation: animation_snow_dialog linear infinite;
 
 }
