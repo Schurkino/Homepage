@@ -62,7 +62,7 @@ h1 {
     padding: 0;
     margin: 0;
     line-height: 1.5rem;
-    color: var(--color_black);
+    color: var(--color_blue);
 }
 h1:hover {
     color: var(--color_blue);
