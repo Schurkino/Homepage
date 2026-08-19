@@ -37,7 +37,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
@@ -73,7 +73,7 @@ h2 {
     margin: 0;
     line-height: 1.5rem;
     color: var(--color_black);
-    padding: 1.5rem 0 0.75rem 0;
+    padding: 0 0 1.5rem 0;
 }
 
 h3 {
@@ -84,7 +84,7 @@ h3 {
     margin: 0;
     line-height: 1.5rem;
     color: var(--color_black);
-    padding: 1.5rem 0 0.75rem 0;
+    padding: 0 0 0.375rem 0;
 }
 
 p {
@@ -119,8 +119,8 @@ a.link:hover {
 }
 a.link:focus-visible,
 a.link_logo:focus-visible {
-    outline: 4px dashed var(--color_pink) !important;
-    outline-offset: 2px !important;
+    outline: 4px dashed var(--color_pink)!important;
+    outline-offset: 2px!important;
     filter: hue-rotate(0);
 }
 
@@ -156,14 +156,14 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: .75rem;
-    padding: 0 0.75rem;;
+    padding: 0 0.75rem;
 }
 
 main {
     width: 100%;
-}
-.main_container {
-    margin: 2.5rem 0 0 0;    
+    flex: 1;
+    margin: 2.5rem 0 0 0;  
+    background-color: color-mix(in srgb, #000000 5%, #FFFFFF 95%);
 }
 
 .icon_contact_mobile,
