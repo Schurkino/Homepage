@@ -225,7 +225,7 @@ ul.image_container {
 .image_box:hover img,
 .image_box:hover .cube_container,
 .image_box:hover .js_particle {
-    transform: scale(1.15);
+    transform: scale(1.25);
 }
 
 dialog {
