@@ -241,7 +241,7 @@ ul.image_container {
 .image_box:hover .cube_container,
 .image_box:hover .js_particle,
 .image_box:hover .js_audio_player {
-    transform: scale(1.25);
+    transform: scale(1.5);
 }
 
 dialog {
