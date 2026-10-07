@@ -7,12 +7,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const buttonNext = svgTape.getElementById("button_next");
   const buttonStop = svgTape.getElementById("button_stop");
 
+  // const circleLeft = svgTape.getElementById("circle_left");
+  // const circleRight = svgTape.getElementById("circle_right");
+
   buttonBack.addEventListener("click", function () {
     console.log("Back geklickt");
   });
 
   buttonPlay.addEventListener("click", function () {
-    console.log("Play geklickt");
+      console.log("Play geklickt");
+      rotationLeft.beginElement();
+      rotationRight.beginElement();
   });
 
   buttonNext.addEventListener("click", function () {
