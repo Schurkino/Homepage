@@ -166,6 +166,10 @@ main {
     background-color: color-mix(in srgb, #000000 5%, #FFFFFF 95%);
 }
 
+audio {
+    display: none;
+}
+
 .icon_contact_mobile,
 .icon_privacy_policy_mobile,
 .icon_legal_notice_mobile {
@@ -403,6 +407,16 @@ dialog .particle {
     to { 
         top: 100%; 
     }
+}
+/*/////////////////////////////////////////////////////////////////////////////////// ja_snow.js ENDE */
+
+/*/////////////////////////////////////////////////////////////////////////////////// ja_snow.js START */
+.js_audio_player {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 /*/////////////////////////////////////////////////////////////////////////////////// ja_snow.js ENDE */
 
