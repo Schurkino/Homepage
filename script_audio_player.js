@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const buttonNext = svgTape.getElementById("button_next");
   const buttonStop = svgTape.getElementById("button_stop");
 
-  // const circleLeft = svgTape.getElementById("circle_left");
-  // const circleRight = svgTape.getElementById("circle_right");
+  const circleLeft = svgTape.getElementById("rotation_left");
+  const circleRight = svgTape.getElementById("rotation_rigth");
 
   buttonBack.addEventListener("click", function () {
     console.log("Back geklickt");
