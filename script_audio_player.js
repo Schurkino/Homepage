@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "audio/forest.mp3",
     "audio/repetition.mp3"
   ];
-  
+
   let currentTrackIndex = 0;
 
   audioTag.src = trackPaths[currentTrackIndex];
@@ -46,6 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
         audioTag.play();
       }
     }
+
+    function addPressEffect(buttonElement) {
+      function pressButton() {
+        buttonElement.style.translate = "0px 4px";
+      }
+
+      function releaseButton() {
+        buttonElement.style.translate = "0px 0px";
+      }
+
+      buttonElement.addEventListener("pointerdown", pressButton);
+      buttonElement.addEventListener("pointerup", releaseButton);
+      buttonElement.addEventListener("pointerleave", releaseButton);
+      buttonElement.addEventListener("pointercancel", releaseButton);
+    }
+
+    addPressEffect(buttonBack);
+    addPressEffect(buttonPlay);
+    addPressEffect(buttonNext);
+    addPressEffect(buttonStop);
 
     buttonBack.addEventListener("click", function () {
       console.log("Back geklickt");
