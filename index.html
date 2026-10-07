@@ -1,13 +1,13 @@
 <!-- Strg + D = Gleiche Elemente markieren -->
 <!-- Shift + Alt + ↓ = Dublizieren nach unten -->
 <!-- Shift + Alt + ↑ = Dublizieren nach oben -->
-<!-- Shift + Alt + A = Multiple, markierte Zeilen auskommentieren -->
+<!-- Shift + # = Multiple, markierte Zeilen auskommentieren -->
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
@@ -17,6 +17,7 @@
     <script src="script_favicon_maker.js"></script>
     <script src="script_fake_tile.js"></script>
     <script src="script_particle.js"></script>
+    <script src="script_audio_player.js"></script>
     <title>Alexej Schurkin</title>
 </head>
 <body>
@@ -29,6 +30,14 @@
     </div>
 </header>
 <main> 
+    <audio id="audio_tag" controls>
+        <source src="audio/to the choir (the short start).mp3" type="audio/mpeg">
+        <!-- <source src="audio/dementophobia.mp3" type="audio/mpeg">
+        <source src="audio/interludium.mp3" type="audio/mpeg">
+        <source src="audio/repetition.mp3" type="audio/mpeg">
+        <source src="audio/nebula.mp3" type="audio/mpeg">
+        <source src="audio/forest.mp3" type="audio/mpeg"> -->
+    </audio>
     <div class="main_container">
         <ul class="image_container">
             <li class="image_box" role="button" aria-hidden="true">
@@ -45,6 +54,9 @@
             <li class="image_box" tabindex="0"><figure><img src="images/choir.jpg" alt="choir"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
             <li class="image_box" tabindex="0"><figure><img src="images/electric_dreams.jpg" alt="electric_dreams"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
             <li class="image_box" tabindex="0"><figure><img src="images/elefant.jpg" alt="elefant"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0">
+                <object id="js_audio_player" class="js_audio_player" type="image/svg+xml" data="images/audioplayer.svg"></object>
+            </li>
             <li class="image_box" tabindex="0"><figure><img src="images/face.gif" alt="face" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects.</figcaption></figure></li>
             <li class="image_box" tabindex="0"><figure><img src="images/feed_your_head.gif" alt="feed_your_head" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
             <li class="image_box" tabindex="0"><figure><img src="images/frankenbill.gif" alt="frankenbill" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
