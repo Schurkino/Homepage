@@ -118,4 +118,24 @@ document.addEventListener("DOMContentLoaded", function () {
       rotationRight.endElement();
     });
   }
+
+  /* Prüft, ob das SVG im object-Tag bereits geladen ist */
+  function isSvgLoaded() {
+    let svgTape = objectTag.contentDocument;
+
+    /* Noch kein SVG-Dokument vorhanden */
+    if (svgTape === null) {
+      return false;
+    }
+
+    /* SVG ist geladen, wenn der Play-Button gefunden wird */
+    return svgTape.getElementById("button_play") !== null;
+  }
+
+  /* Wenn das SVG schon geladen ist, Player sofort starten, sonst auf das load-Event warten */
+  if (isSvgLoaded() === true) {
+    initAudioPlayer();
+  } else {
+    objectTag.addEventListener("load", initAudioPlayer);
+  }
 });
