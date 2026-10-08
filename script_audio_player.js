@@ -124,7 +124,7 @@ function initAudioPlayer(objectTag) {
 }
 
 /* Startet oder stoppt die Spulen-Drehung in allen Audio-Playern der Seite (Kachel und Klon im Dialog) */
-function setCassetteRotation(shouldRotate) {
+function setCassetteRotation(Boolean) {
   let allAudioPlayers = document.querySelectorAll(".js_audio_player");
 
   allAudioPlayers.forEach(function (objectTag) {
@@ -141,10 +141,11 @@ function setCassetteRotation(shouldRotate) {
       return;
     }
 
-    if (shouldRotate === true) {
+    if (Boolean === true) {
       animateTransformTagLeft.beginElement();
       animateTransformTagRight.beginElement();
-    } else {
+    } 
+    else {
       animateTransformTagLeft.endElement();
       animateTransformTagRight.endElement();
     }
