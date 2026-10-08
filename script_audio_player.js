@@ -17,6 +17,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* Setzt den ersten Track als Quelle des Audio-Tags */
   audioTag.src = allMusicTracks[currentTrackIndex];
+
+  /* Spulen passend zum Audio-Zustand drehen lassen, egal woher die Musik gestartet oder gestoppt wird */
+  audioTag.addEventListener("play", function () {
+    setCassetteRotation(true);
+  });
+
+  audioTag.addEventListener("pause", function () {
+    setCassetteRotation(false);
+  });
+
+  audioTag.addEventListener("ended", function () {
+    setCassetteRotation(false);
+  });
 });
 
 /* Verknüpft die Buttons im SVG eines object-Tags mit dem Audio-Tag. Wird von script.js für den Klon im Dialog aufgerufen */
@@ -108,4 +121,32 @@ function initAudioPlayer(objectTag) {
     animateTransformTagLeft.beginElement();
     animateTransformTagRight.beginElement();
   }
+}
+
+/* Startet oder stoppt die Spulen-Drehung in allen Audio-Playern der Seite (Kachel und Klon im Dialog) */
+function setCassetteRotation(shouldRotate) {
+  let allAudioPlayers = document.querySelectorAll(".js_audio_player");
+
+  allAudioPlayers.forEach(function (objectTag) {
+    /* SVG noch nicht geladen: nichts zu drehen */
+    if (objectTag.contentDocument === null) {
+      return;
+    }
+
+    let animateTransformTagLeft = objectTag.contentDocument.getElementById("rotation_left");
+    let animateTransformTagRight = objectTag.contentDocument.getElementById("rotation_right");
+
+    /* Dokument da, aber ohne die Animation: nichts zu drehen */
+    if (animateTransformTagLeft === null) {
+      return;
+    }
+
+    if (shouldRotate === true) {
+      animateTransformTagLeft.beginElement();
+      animateTransformTagRight.beginElement();
+    } else {
+      animateTransformTagLeft.endElement();
+      animateTransformTagRight.endElement();
+    }
+});
 }
