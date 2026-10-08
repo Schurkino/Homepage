@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function addPressEffect(buttonElement) {
       /* Button nach unten verschieben */
       function pressButton() {
-        buttonElement.style.translate = "0px 4px";
+        buttonElement.style.translate = "0px 12px";
       }
 
       /* Button zurück an die Ausgangsposition setzen */
