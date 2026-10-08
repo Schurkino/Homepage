@@ -47,10 +47,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         /* Fall: Die Box enthaelt Audio Player */
-         if (jsAudioPlayer) {
+        if (jsAudioPlayer) {
             let copiedAudioPlayer = jsAudioPlayer.cloneNode(true);
             copiedAudioPlayer.id = "js_audio_player_clone";
             dialogElement.appendChild(copiedAudioPlayer);
+
+            /* Der Klon laedt sein SVG neu. Sobald es da ist, bekommt er seine eigenen Klick-Events */
+            copiedAudioPlayer.addEventListener("load", function () {
+                initAudioPlayer(copiedAudioPlayer);
+            });
         }
 
         /* Fall: Die Box enthaelt ein normales Bild */
