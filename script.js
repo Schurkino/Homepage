@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const figcaption = currentTile.querySelector("figure figcaption");
         const cubeContainer = currentTile.querySelector(".cube_container");
         const jsParticle = currentTile.querySelector(".js_particle");
-        const jsAudioPlayer = currentTile.querySelector(".js_audio_player");
+        const jsAudioPlayerObject = currentTile.querySelector(".js_audio_player");
 
         /* Falls weder ein Bild noch ein Wuerfel existiert (z.B. Fake-Tile), brechen wir ab */
-        if (!img && !cubeContainer && !jsParticle && !jsAudioPlayer) {
+        if (!img && !cubeContainer && !jsParticle && !jsAudioPlayerObject) {
             return;
         }
 
@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         /* Fall: Die Box enthaelt Audio Player */
-        if (jsAudioPlayer) {
-            let copiedAudioPlayer = jsAudioPlayer.cloneNode(true);
-            copiedAudioPlayer.id = "js_audio_player_clone";
-            dialogElement.appendChild(copiedAudioPlayer);
+        if (jsAudioPlayerObject) {
+            let copiedAudioPlayerObject = jsAudioPlayerObject.cloneNode(true);
+            copiedAudioPlayerObject.id = "js_audio_player_clone";
+            dialogElement.appendChild(copiedAudioPlayerObject);
 
             /* Der Klon laedt sein SVG neu. Sobald es da ist, bekommt er seine eigenen Klick-Events */
-            copiedAudioPlayer.addEventListener("load", function () {
-                initAudioPlayer(copiedAudioPlayer);
+            copiedAudioPlayerObject.addEventListener("load", function () {
+                initAudioPlayer(copiedAudioPlayerObject);
             });
         }
 
