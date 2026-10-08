@@ -231,9 +231,6 @@ ul.image_container {
     max-height: 100%;
     object-fit: cover;
 }
-.image_box .js_audio_player {
-    pointer-events: none;
-}
 .image_box img,
 .image_box .cube_container,
 .image_box .js_particle,
@@ -420,20 +417,24 @@ dialog .particle {
 /*/////////////////////////////////////////////////////////////////////////////////// js_snow.js ENDE */
 
 /*/////////////////////////////////////////////////////////////////////////////////// js_snow.js START */
+.image_box .js_audio_player {
+    pointer-events: none;
+}
 .js_audio_player {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
 }
 /* Das Objekt braucht im Dialog-Element eigene Größe */
 dialog .js_audio_player {
-  display: block;
-  width: 500px;
-  max-width: 500px;
-  height: auto;
-  aspect-ratio: 1 / 1;
+    display: block;
+    width: 500px;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    pointer-events: all;
 }
 /*/////////////////////////////////////////////////////////////////////////////////// js_snow.js ENDE */
 
