@@ -20,14 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    function openDialog(currentBox) {
-        const img = currentBox.querySelector("figure img");
-        const figcaption = currentBox.querySelector("figure figcaption");
-        const cubeContainer = currentBox.querySelector(".cube_container");
-        const jsParticle = currentBox.querySelector(".js_particle");
+    function openDialog(currentTile) {
+        const img = currentTile.querySelector("figure img");
+        const figcaption = currentTile.querySelector("figure figcaption");
+        const cubeContainer = currentTile.querySelector(".cube_container");
+        const jsParticle = currentTile.querySelector(".js_particle");
+        const jsAudioPlayer = currentTile.querySelector(".js_audio_player");
 
         /* Falls weder ein Bild noch ein Wuerfel existiert (z.B. Fake-Tile), brechen wir ab */
-        if (!img && !cubeContainer && !jsParticle) {
+        if (!img && !cubeContainer && !jsParticle && !jsAudioPlayer) {
             return;
         }
 
@@ -45,10 +46,20 @@ document.addEventListener("DOMContentLoaded", function() {
             dialogElement.appendChild(copiedJsParticle);
         }
 
+        /* Fall: Die Box enthaelt Audio Player */
+         if (jsAudioPlayer) {
+            let copiedAudioPlayer = jsAudioPlayer.cloneNode(true);
+            copiedAudioPlayer.id = "js_audio_player_clone";
+            dialogElement.appendChild(copiedAudioPlayer);
+        }
+
         /* Fall: Die Box enthaelt ein normales Bild */
         if (img) {
             dialogImage.src = img.src;
             dialogImage.alt = img.alt;
+        }
+
+        if (figcaption) {
             dialogFigcaption.textContent = figcaption.textContent;
         }
 
@@ -73,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
         /* Bild-Attribute leeren */
         dialogImage.src = "";
         dialogImage.alt = "";
+        dialogFigcaption.textContent = "";
         enableScroll();
 
         /* Geklontes Wuerfel-Div suchen und restlos entfernen, falls vorhanden */
@@ -82,6 +94,10 @@ document.addEventListener("DOMContentLoaded", function() {
         /* Geklontens Schnee-Div suchen und restlos entfernen, falls vorhanden */
         if (dialogElement.querySelector("#js_snow_clone")) {
             dialogElement.querySelector("#js_snow_clone").remove();
+        }
+        /* Geklontens Audio-Div suchen und restlos entfernen, falls vorhanden */
+        if (dialogElement.querySelector("#js_audio_player_clone")) {
+            dialogElement.querySelector("#js_audio_player_clone").remove();
         }
     });
 
