@@ -102,4 +102,10 @@ function initAudioPlayer(objectTag) {
     animateTransformTagLeft.endElement();
     animateTransformTagRight.endElement();
   });
+
+  /* Falls beim Öffnen des Dialogs schon Musik läuft, die Spulen direkt drehen lassen */
+  if (audioTag.paused === false) {
+    animateTransformTagLeft.beginElement();
+    animateTransformTagRight.beginElement();
+  }
 }
