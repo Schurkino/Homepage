@@ -144,7 +144,7 @@ ul.image_container, .image_container li {
 header {
     width: 100%;
     background-color: var(--color_white);
-    box-shadow: 0 6px 6px #00000010;
+    /* box-shadow: 0 6px 6px #00000010; */
     position: fixed;
     top: 0;
     z-index: 10;
@@ -163,7 +163,7 @@ main {
     width: 100%;
     flex: 1;
     margin: 2.5rem 0 0 0;
-    background-color: color-mix(in srgb, #000000 5%, #FFFFFF 95%);
+    /* background-color: color-mix(in srgb, #000000 5%, #FFFFFF 95%); */
 }
 
 audio {
