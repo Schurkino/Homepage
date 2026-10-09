@@ -64,6 +64,12 @@ h1 {
     line-height: 2.5rem;
     color: var(--color_blue);
 }
+@media (min-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
 
 h2 {
     font-size: 1.25rem;
