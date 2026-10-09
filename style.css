@@ -94,14 +94,17 @@ h1 {
 [class*="headline_single_letter"]:hover {
     color: var(--color_orange);
 }
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-}
+
 @media (max-width: 512px) {
-    h1 {
-        font-size: 1.25rem;
+    .headline_single_letter_s, 
+    .headline_single_letter_c, 
+    .headline_single_letter_h, 
+    .headline_single_letter_u, 
+    .headline_single_letter_r, 
+    .headline_single_letter_k, 
+    .headline_single_letter_i, 
+    .headline_single_letter_n {
+        display: none;
     }
 }
 
