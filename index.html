@@ -1,21 +1,23 @@
 <!-- Strg + D = Gleiche Elemente markieren -->
 <!-- Shift + Alt + ↓ = Dublizieren nach unten -->
 <!-- Shift + Alt + ↑ = Dublizieren nach oben -->
-<!-- Shift + Alt + A = Multiple, markierte Zeilen auskommentieren -->
+<!-- Shift + # = Multiple, markierte Zeilen auskommentieren -->
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_customize.css">
-    
-    <script src="script.js"></script>
-    <script src="script_favicon_maker.js"></script>
-    <script src="script_fake_tile.js"></script>
+
+    <script src="script.js" defer></script>
+    <script src="script_favicon_maker.js" defer></script>
+    <script src="script_fake_tile.js" defer></script>
+    <script src="script_particle.js" defer></script>
+    <script src="script_audio_player.js" defer></script>
     <title>Alexej Schurkin</title>
 </head>
 <body>
@@ -49,21 +51,72 @@
 </header>
 <main> 
     <div class="main_container">
-        <div class="padding_x_12 padding_bottom_32 padding_top_24">
-            <h2>Impressum</h2>
-            <h3>Angaben gemäß § 5 TMG:</h3>
-            <p>
-                Alexej Schurkin<br>
-                Herbstsweg 9<br>
-                22307 Hamburg
-            </p>
-
-            <h3>Kontakt</h3>
-            <p>
-                E-Mail: <a class="link" href="mailto:alexej.schurkin@gmail.com" aria-label="E-Mail an alexej.schurkin@gmail.com schreiben">alexej.schurkin@gmail.com</a>
-            </p>
-        </div>
+        <ul class="image_container">
+            <li class="image_box" role="button" aria-hidden="true">
+                <div tabindex="0" class="js_fake_tile" id="js_fake_tile">
+                    <span id="js_fake_text" class="js_fake_text">Click<br>Me!</span>
+                </div>
+            </li>
+            <li class="image_box" tabindex="0"><figure><img src="images/shout.gif" alt="shout" loading="lazy"><figcaption>Pixelart-Animation in Asprite erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/arcade.gif" alt="arcade"><figcaption>3D-Illustration in Blender und Pixelart-Animation in Photoshop</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/blues.jpg" alt="blues"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/bonobo.jpg" alt="bonobo"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/cat_booth.gif" alt="cat_booth"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/choir.jpg" alt="choir"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><div class="cube_container"><div class="cube"><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="f5"></div><div class="f6"></div></div></div></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/electric_dreams.jpg" alt="electric_dreams"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/face.gif" alt="face" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/frankenbill.gif" alt="frankenbill" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/feed_your_head.gif" alt="feed_your_head" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/frosch.jpg" alt="frosch" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/headis.jpg" alt="headis" decoding="async"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0">
+                <object id="js_audio_player" class="js_audio_player" type="image/svg+xml" data="images/audioplayer.svg"></object>
+            </li>
+            <li class="image_box" tabindex="0"><figure><img src="images/james.gif" alt="james" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/ko.gif" alt="ko" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/lemon_lake.gif" alt="lemon_lake" decoding="async"><figcaption>3-D-Illustration in Blender erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/elefant.jpg" alt="elefant"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/matura.jpg" alt="matura" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/muse.gif" alt="muse" decoding="async"><figcaption>Illustration in Illustrator erstellt. Animation in After Effects.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/mosel.jpg" alt="mosel" decoding="async"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
+            <li class="image_box" aria-hidden="true">
+                <div tabindex="0" class="js_particle" id="js_particle">
+                    <span class="umbrella"></span>
+                </div>
+            </li>
+            <li class="image_box" tabindex="0"><figure><img src="images/platten.gif" alt="platten" decoding="async"><figcaption>Illustration in Illustrator erstellt. Animation in After Effects.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/prison.gif" alt="prison" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/push_button.gif" alt="push_button" decoding="async"><figcaption>Pixelart-Animation in Illustrator erstellt.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/rapunzel.gif" alt="rapunzel" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/ray.jpg" alt="ray" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/red_cry.gif" alt="red_cry" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/salty_dog.jpg" alt="salty_dog" decoding="async"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/r_letter.gif" alt="r_letter" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/roadie.jpg" alt="roadie" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/roboto.jpg" alt="roboto" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/seagull.gif" alt="seagull" loading="lazy"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/skull_island.gif" alt="skull_island" loading="lazy"><figcaption>3-D-Illustration in Blender erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/profilbild.gif" alt="profilbild" loading="lazy"><figcaption>Das bin ich</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/sun.gif" alt="sun" loading="lazy"><figcaption>Pixelart-Art-Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/taylor.jpg" alt="taylor" loading="lazy"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/running.gif" alt="running" decoding="async"><figcaption>Illustration in illustrator erstellt. Animation in After Effects.</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/boy.gif" alt="boy"><figcaption>Animation in Photoshop erstellt</figcaption></figure></li>
+            <li class="image_box" tabindex="0"><figure><img src="images/johnny_nose_typo.jpg" alt="johnny_nose_typo" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
+        </ul>
     </div>
+
+    <dialog id="dialogElement" class="dialogElement">
+        <button type="button" class="close_button">&#10005;</button>
+        <figure>
+            <img id="imgPlaceholder" class="imgPlaceholder" src="" alt="">
+            <figcaption id="figcaptionPlaceholder" class="figcaptionPlaceholder"></figcaption>
+        </figure>
+    </dialog>
+
+    <audio id="audio_tag" controls>
+        <source src="audio/to the choir (the short start).mp3" type="audio/mpeg">
+    </audio>
 </main>
 <footer>
     <div class="footer_container"></div>
