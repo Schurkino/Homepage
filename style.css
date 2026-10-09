@@ -1,125 +1,633 @@
-<!-- Strg + D = Gleiche Elemente markieren -->
-<!-- Shift + Alt + ↓ = Dublizieren nach unten -->
-<!-- Shift + Alt + ↑ = Dublizieren nach oben -->
-<!-- Shift + # = Multiple, markierte Zeilen auskommentieren -->
-<!DOCTYPE html>
-<html lang="de">
+/* Strg + D = Gleiche Elemente markieren */
+/* Shift + Alt + ↓ = Dublizieren nach unten */
+/* Shift + Alt + ↑ = Dublizieren nach oben */
+/* Shift + Alt + A = Multiple, markierte Zeilen auskommentieren */
+:root {
+    --color_black: #000000;
+    --color_darkblue: #1D2B53;
+    --color_darkpurple: #7E2553;
+    --color_darkgreen: #008751;
+    --color_darkgrey: #5F574F;
+    --color_lightgrey: #C2C3C7;
+    --color_white: #FFFFFF;
+    --color_red: #FF004D;
+    --color_orange: #FFA300;
+    --color_yellow: #FFEC27;
+    --color_green: #00E436;
+    --color_blue: #29ADFF;
+    --color_lavender: #83769C;
+    --color_pink: #FF77A8;
+    --color_lightpeach: #FFCCAA;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@font-face {
+    font-family: "PressStart2P";
+    src: url("fonts/press_start_2p.ttf") format("truetype");
+}
 
-    <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style_customize.css">
+* {
+    box-sizing: border-box;
+}
 
-    <script src="script.js" defer></script>
-    <script src="script_favicon_maker.js" defer></script>
-    <script src="script_fake_tile.js" defer></script>
-    <script src="script_particle.js" defer></script>
-    <script src="script_audio_player.js" defer></script>
-    <title>Alexej Schurkin</title>
-</head>
-<body>
-<header>
-    <div class="header_container">
-        <a class="link_logo" href="/" aria-label="Link zur Startseite">
-            <h1>
-                <span class="headline_screenreader">ALEXEJ SCHURKIN</span>
-                <span aria-hidden="true" class="headline_letters">
-                    <span class="headline_single_letter">A</span>
-                    <span class="headline_single_letter">L</span>
-                    <span class="headline_single_letter">E</span>
-                    <span class="headline_single_letter">X</span>
-                    <span class="headline_single_letter">E</span>
-                    <span class="headline_single_letter">J</span>
-                    <span class="headline_single_letter_s">S</span>
-                    <span class="headline_single_letter_c">C</span>
-                    <span class="headline_single_letter_h">H</span>
-                    <span class="headline_single_letter_u">U</span>
-                    <span class="headline_single_letter_r">R</span>
-                    <span class="headline_single_letter_k">K</span>
-                    <span class="headline_single_letter_i">I</span>
-                    <span class="headline_single_letter_n">N</span>
-                </span>
-            </h1>
-        </a>
-        <a class="link" href="mailto:alexej.schurkin@gmail.com" aria-label="E-Mail an alexej.schurkin@gmail.com schreiben"><span class="icon_contact_mobile"></span><span class="label_contact_mobile">Kontakt</span></a>
-        <a class="link" href="privacy_policy.html" aria-label="Link zum Datenschutz"><span class="icon_privacy_policy_mobile"></span><span class="label_privacy_policy_mobile">Datenschutz</span></a>
-        <a class="link" href="legal_notice.html" aria-label="Link zum Impressum"><span class="icon_legal_notice_mobile"></span><span class="label_legal_notice_mobile">Impressum</span></a>
-    </div>
-</header>
-<main> 
-    <div class="main_container">
-        <ul class="image_container">
-            <li class="image_box" tabindex="0"><figure><img src="images/shout.gif" alt="shout" loading="lazy"><figcaption>Pixelart-Animation in Asprite erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/blues.jpg" alt="blues"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/bonobo.jpg" alt="bonobo"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/cat_booth.gif" alt="cat_booth"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/choir.jpg" alt="choir"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><div class="cube_container"><div class="cube"><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="f5"></div><div class="f6"></div></div></div></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/electric_dreams.jpg" alt="electric_dreams"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/face.gif" alt="face" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects.</figcaption></figure></li>
-            <li class="image_box" role="button" aria-hidden="true">
-                <div tabindex="0" class="js_fake_tile" id="js_fake_tile">
-                    <span id="js_fake_text" class="js_fake_text">Click<br>Me!</span>
-                </div>
-            </li>
-            <li class="image_box" tabindex="0"><figure><img src="images/frankenbill.gif" alt="frankenbill" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/feed_your_head.gif" alt="feed_your_head" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/frosch.jpg" alt="frosch" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/headis.jpg" alt="headis" decoding="async"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0">
-                <object id="js_audio_player" class="js_audio_player" type="image/svg+xml" data="images/audioplayer.svg"></object>
-            </li>
-            <li class="image_box" tabindex="0"><figure><img src="images/james.gif" alt="james" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/ko.gif" alt="ko" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/lemon_lake.gif" alt="lemon_lake" decoding="async"><figcaption>3-D-Illustration in Blender erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/elefant.jpg" alt="elefant"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/matura.jpg" alt="matura" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/muse.gif" alt="muse" decoding="async"><figcaption>Illustration in Illustrator erstellt. Animation in After Effects.</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/mosel.jpg" alt="mosel" decoding="async"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/arcade.gif" alt="arcade"><figcaption>3D-Illustration in Blender und Pixelart-Animation in Photoshop</figcaption></figure></li>
-            <li class="image_box" aria-hidden="true">
-                <div tabindex="0" class="js_particle" id="js_particle">
-                    <span class="umbrella"></span>
-                </div>
-            </li>
-            <li class="image_box" tabindex="0"><figure><img src="images/platten.gif" alt="platten" decoding="async"><figcaption>Illustration in Illustrator erstellt. Animation in After Effects.</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/prison.gif" alt="prison" decoding="async"><figcaption>Illustration in Photoshop erstellt. Animation in After Effects.</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/push_button.gif" alt="push_button" decoding="async"><figcaption>Pixelart-Animation in Illustrator erstellt.</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/rapunzel.gif" alt="rapunzel" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt.</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/ray.jpg" alt="ray" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/red_cry.gif" alt="red_cry" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/salty_dog.jpg" alt="salty_dog" decoding="async"><figcaption>Illustration in Illustrator erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/r_letter.gif" alt="r_letter" decoding="async"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/roadie.jpg" alt="roadie" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/roboto.jpg" alt="roboto" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/seagull.gif" alt="seagull" loading="lazy"><figcaption>Pixelart-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/skull_island.gif" alt="skull_island" loading="lazy"><figcaption>3-D-Illustration in Blender erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/profilbild.gif" alt="profilbild" loading="lazy"><figcaption>Das bin ich</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/sun.gif" alt="sun" loading="lazy"><figcaption>Pixelart-Art-Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/taylor.jpg" alt="taylor" loading="lazy"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/running.gif" alt="running" decoding="async"><figcaption>Illustration in illustrator erstellt. Animation in After Effects.</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/boy.gif" alt="boy"><figcaption>Animation in Photoshop erstellt</figcaption></figure></li>
-            <li class="image_box" tabindex="0"><figure><img src="images/johnny_nose_typo.jpg" alt="johnny_nose_typo" decoding="async"><figcaption>Illustration in Photoshop erstellt</figcaption></figure></li>
-        </ul>
-    </div>
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    color: var(--color_black);
+}
 
-    <dialog id="dialogElement" class="dialogElement">
-        <button type="button" class="close_button">&#10005;</button>
-        <figure>
-            <img id="imgPlaceholder" class="imgPlaceholder" src="" alt="">
-            <figcaption id="figcaptionPlaceholder" class="figcaptionPlaceholder"></figcaption>
-        </figure>
-    </dialog>
+:focus {
+    outline: 0;
+    border: 0;
+}
+:focus-visible {
+    outline: 4px dashed var(--color_green) !important;
+    outline-offset: -10px !important;
+    filter: invert();
+}
 
-    <audio id="audio_tag" controls>
-        <source src="audio/to the choir (the short start).mp3" type="audio/mpeg">
-    </audio>
-</main>
-<footer>
-    <div class="footer_container"></div>
-</footer>
-</body>
-</html>
+h1 {
+    font-family: "PressStart2P";
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-weight: 200;
+    padding: 0;
+    margin: 0;
+    color: var(--color_blue);
+    height: 100%;
+}
+.headline_screenreader {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+.headline_letters {
+    position: absolute;
+    left: 0.75rem;
+    top:  0.125rem; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    height: 100%;
+}
+.headline_single_letter_s, 
+.headline_single_letter_c, 
+.headline_single_letter_h, 
+.headline_single_letter_u, 
+.headline_single_letter_r, 
+.headline_single_letter_k, 
+.headline_single_letter_i, 
+.headline_single_letter_n {
+    color: var(--color_darkgreen);
+}
+[class*="headline_single_letter"]:hover {
+    color: var(--color_orange);
+}
+
+@media (max-width: 512px) {
+    .headline_single_letter_s, 
+    .headline_single_letter_c, 
+    .headline_single_letter_h, 
+    .headline_single_letter_u, 
+    .headline_single_letter_r, 
+    .headline_single_letter_k, 
+    .headline_single_letter_i, 
+    .headline_single_letter_n {
+        display: none;
+    }
+}
+
+
+h2 {
+    font-size: 1.25rem;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5rem;
+    color: var(--color_black);
+    padding: 0 0 1.5rem 0;
+}
+
+h3 {
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5rem;
+    color: var(--color_black);
+    padding: 0 0 0.375rem 0;
+}
+
+p {
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5rem;
+    color: var(--color_black);
+    padding: 0 0 0.75rem 0;
+}
+
+small {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5rem;
+    color: var(--color_black);
+}
+
+a {
+    text-decoration:  none;
+    color: var(--color_blue);
+    font-size: 1rem;
+    margin: 0;
+}
+a:first-child {
+    margin: 0 auto 0 0;
+}
+a.link:hover {
+    text-decoration:  underline;
+}
+a.link_logo {
+    height: 100%;
+}
+a.link:focus-visible,
+a.link_logo:focus-visible {
+    outline: 4px dashed var(--color_pink)!important;
+    outline-offset: 2px!important;
+    filter: hue-rotate(0);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: inside;
+    margin: 0;
+    padding: 0 0.875rem 0.75rem 0.875rem;
+}
+
+ul.image_container, .image_container li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 2.5rem;
+    width: 100%;
+    background-color: var(--color_white);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.header_container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0 0.75rem;
+}
+
+main {
+    width: 100%;
+    flex: 1;
+    margin: 2.5rem 0 0 0;
+    /* background-color: color-mix(in srgb, #000000 5%, #FFFFFF 95%); */
+}
+
+audio {
+    display: none;
+}
+
+.icon_contact_mobile,
+.icon_privacy_policy_mobile,
+.icon_legal_notice_mobile {
+    display: none;
+}   
+
+.contact_container_desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+ul.image_container {
+    margin: 0;
+    flex: 1;
+    width: 100%;
+    display: grid;
+    gap: 0;
+    /* Der Browser erzeugt so viele Spalten wie hinein passen, abhängig von der verfügbaren Breite. */
+    /* Überzählige leere Spalten verschwinden automatisch (anders als bei auto-fill). */
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    /* Aber nie breiter als 100% des Containers, falls der Container kleiner ist. */
+}
+
+@media (min-width: 1920px) {
+    ul.image_container {
+        grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    }
+}
+
+.image_box {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+.image_box:nth-of-type(2n) {
+    background-color: var(--color_lightgrey);
+}
+figure,
+.image_box figure {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+.image_box figcaption {
+    display: none;
+}
+.image_box img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.image_box img,
+.image_box .cube_container,
+.image_box .js_particle,
+.image_box .js_audio_player {
+    transition: transform 0.5s;
+}
+.image_box:hover img,
+.image_box:hover .cube_container,
+.image_box:hover .js_particle,
+.image_box:hover .js_audio_player {
+    transform: scale(1.5);
+}
+
+dialog {
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    max-height: 90vh;
+    width: fit-content;
+    max-width: 90vw;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    box-shadow: 6px 6px 6px #00000050;
+}
+dialog::backdrop {
+    background-color: #FFFFFFEE;
+}
+dialog:not([open]) * {
+    display: none;
+}
+dialog .close_button {
+    position: absolute;
+    display: inline;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    cursor: pointer;
+    color: #000000;
+    background-color: #FFFFFF90;
+    z-index: 10;
+}
+dialog figcaption {
+    display: block;
+}
+dialog figcaption {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0.375rem;
+    font-size: 0.75rem;
+    max-width: 100vw;
+    text-align: center;
+    color: var(--color_black);
+    background-color: #FFFFFF90;
+}
+dialog img {
+    display: block;
+    max-height: 90vh;
+    max-width: 90vw;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////// ja_fake_tile.js START */
+.js_fake_tile {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 2.5rem;
+    cursor: pointer;
+    
+    animation-name: color-fade;
+    animation-duration: 1s;
+    animation-timing-function: step-end; /* Beschleunigen/Abbremsen */
+    animation-iteration-count: infinite; /* Unendlich wiederholen */
+    background-color: var(--color_blue); 
+}
+.js_fake_text {
+    color: var(--color_white);
+    padding: 0.75rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 3rem;
+}
+
+@media (max-width: 512px) {
+    .js_fake_tile {
+        font-size: 2rem;
+    }
+}
+
+@keyframes color-fade {
+    0% {
+        background-color: var(--color_red);
+    }
+    25% {
+        background-color: var(--color_blue);
+    }
+    50% {
+        background-color: var(--color_blue);
+    }
+    75% {
+        background-color: var(--color_blue);
+    }
+    100% {
+        background-color: var(--color_blue);
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////// ja_fake_tile.js ENDE */
+
+/*/////////////////////////////////////////////////////////////////////////////////// js_snow.js START */
+.js_particle {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--color_darkblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+}
+.js_particle .umbrella { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    background-image: url("images/rain_umbrella.svg");
+    background-size: 100% 90%;
+    background-position: 100% 200%;
+    background-repeat: no-repeat;
+}
+dialog .js_particle {
+    max-width: 500px;
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 1/1;    
+}
+.particle {
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 12px;
+    background-color: var(--color_blue);
+    pointer-events: none;
+    animation: animation_snow linear infinite;
+}
+dialog .particle {
+    width: 8px;
+    height: 24px;
+    animation: animation_snow_dialog linear infinite;
+
+}
+@keyframes animation_snow {
+    from { 
+        top: -50px; 
+    }
+    to { 
+        top: 100%; 
+    }
+}
+@keyframes animation_snow_dialog {
+    from { 
+        top: -100px; 
+    }
+    to { 
+        top: 100%; 
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////// js_snow.js ENDE */
+
+/*/////////////////////////////////////////////////////////////////////////////////// js_snow.js START */
+.image_box .js_audio_player {
+    pointer-events: none;
+}
+.js_audio_player {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+/* Das Objekt braucht im Dialog-Element eigene Größe */
+dialog .js_audio_player {
+    display: block;
+    width: 500px;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    pointer-events: all;
+}
+dialog:has(.js_audio_player) figure {
+    display: none;
+}
+/*/////////////////////////////////////////////////////////////////////////////////// js_snow.js ENDE */
+
+/*/////////////////////////////////////////////////////////////////////////////////// cube START */
+.cube_container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color_green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+}
+dialog .cube_container {
+    max-width: 500px;
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    transform-style:preserve-3d;
+    animation: spin 20s linear infinite;
+}
+dialog .cube {
+    width: 200px;
+    height: 200px;
+}
+
+.cube div {
+    position:absolute;
+    width: 100px;
+    height: 100px;
+}
+dialog .cube div {
+    position:absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.f1 { 
+    transform:rotateY(0deg) translateZ(50px); 
+    background-color: var(--color_lightpeach);
+}
+dialog .f1 { 
+    transform:rotateY(0deg) translateZ(100px); 
+    background-color: var(--color_lightpeach);
+}
+.f2 { 
+    transform:rotateY(90deg) translateZ(50px); 
+    background-color: var(--color_blue);
+}
+dialog .f2 { 
+    transform:rotateY(90deg) translateZ(100px); 
+    background-color: var(--color_blue);
+}
+.f3 { 
+    transform:rotateY(180deg) translateZ(50px); 
+    background-color: var(--color_green);      
+}
+dialog .f3 { 
+    transform:rotateY(180deg) translateZ(100px); 
+    background-color: var(--color_green);      
+}
+.f4 { 
+    transform:rotateY(-90deg) translateZ(50px); 
+    background-color: var(--color_pink);
+}
+dialog .f4 { 
+    transform:rotateY(-90deg) translateZ(100px); 
+    background-color: var(--color_pink);
+}
+.f5 { 
+    transform:rotateX(90deg) translateZ(50px); 
+    background-color: var(--color_orange);
+}
+dialog .f5 { 
+    transform:rotateX(90deg) translateZ(100px); 
+    background-color: var(--color_orange);
+}
+.f6 { 
+    transform:rotateX(-90deg) translateZ(50px); 
+    background-color: var(--color_yellow);
+}
+dialog .f6 { 
+    transform:rotateX(-90deg) translateZ(100px); 
+    background-color: var(--color_yellow);
+}
+
+@keyframes spin {
+    0% { transform:rotateX(0) rotateY(0); }
+    100% { transform:rotateX(360deg) rotateY(360deg); }
+}
+/*/////////////////////////////////////////////////////////////////////////////////// cube ENDE */
+
+
+@media (max-width: 1024px) {
+    .icon_contact_mobile,
+    .icon_privacy_policy_mobile,
+    .icon_legal_notice_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        background-size:contain;
+        background-repeat: no-repeat;
+    }   
+    .icon_contact_mobile {
+        background-image: url(images/icon_contact_mobile.png);
+    }  
+    .icon_privacy_policy_mobile {
+        background-image: url(images/icon_privacy_policy_mobile.png);
+    }  
+    .icon_legal_notice_mobile {
+        background-image: url(images/icon_legal_notice_mobile.png);
+    }   
+    .label_contact_mobile,
+    .label_privacy_policy_mobile,
+    .label_legal_notice_mobile {
+        display: none;
+    }
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+.overflow_auto {
+    overflow: auto;
+}
+
+.display_none {
+    display: none!important;
+}
+.display_block {
+    display: block!important;
+}
+.display_inline {
+    display: inline!important;
+}
+.display_inline_block {
+    display: inline-block!important;
+}
