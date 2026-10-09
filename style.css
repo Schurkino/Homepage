@@ -61,25 +61,47 @@ h1 {
     font-weight: 200;
     padding: 0;
     margin: 0;
-    line-height: 2.5rem;
     color: var(--color_blue);
+    height: 100%;
 }
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 2rem;
-        line-height: 2rem;
-    }
+.headline_screenreader {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+.headline_letters {
+    position: absolute;
+    left: 0.75rem;
+    top:  0.125rem; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    height: 100%;
+}
+.headline_single_letter_s, 
+.headline_single_letter_c, 
+.headline_single_letter_h, 
+.headline_single_letter_u, 
+.headline_single_letter_r, 
+.headline_single_letter_k, 
+.headline_single_letter_i, 
+.headline_single_letter_n {
+    color: var(--color_darkgreen);
+}
+[class*="headline_single_letter"]:hover {
+    color: var(--color_orange);
 }
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 2rem;
     }
 }
 @media (max-width: 512px) {
     h1 {
         font-size: 1rem;
-        line-height: 1rem;
     }
 }
 
@@ -136,6 +158,9 @@ a:first-child {
 a.link:hover {
     text-decoration:  underline;
 }
+a.link_logo {
+    height: 100%;
+}
 a.link:focus-visible,
 a.link_logo:focus-visible {
     outline: 4px dashed var(--color_pink)!important;
@@ -161,15 +186,15 @@ ul.image_container, .image_container li {
 }
 
 header {
+    height: 2.5rem;
     width: 100%;
     background-color: var(--color_white);
-    /* box-shadow: 0 6px 6px #00000010; */
     position: fixed;
     top: 0;
     z-index: 10;
 }
 .header_container {
-    height: 40px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -556,7 +581,7 @@ dialog .f6 {
 /*/////////////////////////////////////////////////////////////////////////////////// cube ENDE */
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .icon_contact_mobile,
     .icon_privacy_policy_mobile,
     .icon_legal_notice_mobile {
