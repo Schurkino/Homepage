@@ -56,12 +56,12 @@ body{
 
 h1 {
     font-family: "PressStart2P";
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-decoration: none;
     font-weight: 200;
     padding: 0;
     margin: 0;
-    line-height: 2rem;
+    line-height: 2.5rem;
     color: var(--color_blue);
 }
 
