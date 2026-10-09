@@ -64,13 +64,18 @@ h1 {
     line-height: 2.5rem;
     color: var(--color_blue);
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     h1 {
-        font-size: 1.25rem;
-        line-height: 1.25rem;
+        font-size: 2rem;
+        line-height: 2rem;
     }
 }
-
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
 @media (max-width: 512px) {
     h1 {
         font-size: 1rem;
