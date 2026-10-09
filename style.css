@@ -93,6 +93,11 @@ h1 {
 }
 [class*="headline_single_letter"]:hover {
     color: var(--color_orange);
+    cursor: crosshair;
+}
+[class*="headline_single_letter"]:active {
+    color: var(--color_white);
+    cursor: crosshair;
 }
 
 @media (max-width: 512px) {
