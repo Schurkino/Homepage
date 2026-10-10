@@ -100,7 +100,7 @@ h1 {
     cursor: crosshair;
 }
 
-@media (max-width: 512px) {
+@media (max-width: 768px) {
     .headline_single_letter_s, 
     .headline_single_letter_c, 
     .headline_single_letter_h, 
@@ -112,7 +112,6 @@ h1 {
         display: none;
     }
 }
-
 
 h2 {
     font-size: 1.25rem;
